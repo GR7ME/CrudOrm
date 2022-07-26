@@ -14,7 +14,9 @@ export class UserService {
   // }
 
   findAll() {
-    return this.userRepository.find()
+    return this.userRepository.find({
+      relations:["articles"]
+    })
   }
   // findOne(id: number) {
   //   return `This action returns a #${id} user`;
